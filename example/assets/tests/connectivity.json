@@ -1,0 +1,77 @@
+{
+	"active": true,
+	"name": "Connectivity",
+	"suiteName": "Connectivity",
+	"steps": [{
+			"id": "tap",
+			"values": {
+				"testableId": "test_page_Edit Text"
+			}
+		},
+		{
+			"id": "set_value",
+			"values": {
+				"testableId": "edit_text_0",
+				"value": "{{_connected}}",
+				"type": "String"
+			}
+		},
+		{
+			"id": "assert_value",
+			"values": {
+				"testableId": "edit_text_0",
+				"value": "true",
+				"equals": "true",
+				"caseSensitive": "true"
+			}
+		},
+		{
+			"id": "assert_connectivity",
+			"values": {
+				"connected": "true"
+			}
+		},
+		{
+			"id": "screenshot",
+			"values": {
+				"goldenCompatible": true
+			}
+		},
+		{
+			"id": "set_connectivity",
+			"values": {
+				"connected": "false"
+			}
+		},
+		{
+			"id": "set_value",
+			"values": {
+				"testableId": "edit_text_0",
+				"value": "{{_connected}}",
+				"type": "String"
+			}
+		},
+		{
+			"id": "assert_connectivity",
+			"values": {
+				"connected": "false"
+			}
+		},
+		{
+			"id": "assert_value",
+			"values": {
+				"testableId": "edit_text_0",
+				"value": "false",
+				"equals": "true",
+				"caseSensitive": "true"
+			}
+		},
+		{
+			"id": "screenshot",
+			"values": {
+				"goldenCompatible": true
+			}
+		}
+	],
+	"version": 1
+}
