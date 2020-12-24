@@ -37,6 +37,10 @@ class ConnectivityPlugin with WidgetsBindingObserver {
   /// been overridden then this will return [null].
   bool get overriddenConnected => _overriddenConnected;
 
+  /// Returns the stream that will fire with a [true] when connectivity is
+  /// restored and [false] when connectivity is lost.
+  Stream<bool> get onConnectedChanged => _connectedStreamController.stream;
+
   /// Sets the overridden connected state.  Set to [null] to reset back to using
   /// the value from the device.
   set overriddenConnected(bool connected) {
