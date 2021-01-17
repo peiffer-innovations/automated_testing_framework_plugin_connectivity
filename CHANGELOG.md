@@ -1,3 +1,8 @@
+## [1.0.1+1] - January 17th, 2020
+
+* Dependency updates
+
+
 ## [1.0.1] - December 24th, 2020
 
 * Updated to expose the `onConnectedChanged` stream
