@@ -29,6 +29,7 @@ class ResetConnectivityStep extends TestRunnerStep {
   /// Sets the connectivity value to the [ConnectivityPlugin].
   @override
   Future<void> execute({
+    @required CancelToken cancelToken,
     @required TestReport report,
     @required TestController tester,
   }) async {

@@ -42,6 +42,7 @@ class AssertConnectivityStep extends TestRunnerStep {
   /// Executes the step.  This will
   @override
   Future<void> execute({
+    @required CancelToken cancelToken,
     @required TestReport report,
     @required TestController tester,
   }) async {
