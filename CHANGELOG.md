@@ -1,3 +1,8 @@
+## [3.0.0] - March 9th, 2021
+
+* Null Safety
+
+
 ## [2.0.0] - February 21st, 2021
 
 * Updating to latest framework

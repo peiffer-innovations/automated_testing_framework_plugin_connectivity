@@ -1,7 +1,5 @@
 import 'package:automated_testing_framework/automated_testing_framework.dart';
 import 'package:automated_testing_framework_plugin_connectivity/automated_testing_framework_plugin_connectivity.dart';
-import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
 
 /// Set's the device's connectivity status.  As a note, this will not actually
 /// change the connection.  Instead, it sets the value on the
@@ -19,7 +17,9 @@ class ResetConnectivityStep extends TestRunnerStep {
   static ResetConnectivityStep fromDynamic(dynamic map) {
     ResetConnectivityStep result;
 
-    if (map != null) {
+    if (map == null) {
+      throw Exception('[ResetConnectivityStep.fromDynamic]: map is null');
+    } else {
       result = ResetConnectivityStep();
     }
 
@@ -29,9 +29,9 @@ class ResetConnectivityStep extends TestRunnerStep {
   /// Sets the connectivity value to the [ConnectivityPlugin].
   @override
   Future<void> execute({
-    @required CancelToken cancelToken,
-    @required TestReport report,
-    @required TestController tester,
+    required CancelToken cancelToken,
+    required TestReport report,
+    required TestController tester,
   }) async {
     var name = 'reset_connectivity()';
 

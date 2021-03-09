@@ -16,7 +16,7 @@ class AssertConnectivityForm extends TestStepForm {
   @override
   Widget buildForm(
     BuildContext context,
-    Map<String, dynamic> values, {
+    Map<String, dynamic>? values, {
     bool minify = false,
   }) {
     return Column(
@@ -42,7 +42,7 @@ class AssertConnectivityForm extends TestStepForm {
               ],
               label:
                   TestConnectivityTranslations.atf_connectivity_form_connected,
-              values: values,
+              values: values ?? <String, dynamic>{},
             ),
           ],
           minify: minify,

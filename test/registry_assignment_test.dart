@@ -9,7 +9,7 @@ void main() {
     TestConnectivityHelper.registerTestSteps();
     var availStep = TestStepRegistry.instance.getAvailableTestStep(
       'assert_connectivity',
-    );
+    )!;
 
     expect(availStep.form.runtimeType, AssertConnectivityForm);
     expect(
@@ -29,7 +29,7 @@ void main() {
     TestConnectivityHelper.registerTestSteps();
     var availStep = TestStepRegistry.instance.getAvailableTestStep(
       'reset_connectivity',
-    );
+    )!;
 
     expect(availStep.form.runtimeType, ResetConnectivityForm);
     expect(
@@ -49,7 +49,7 @@ void main() {
     TestConnectivityHelper.registerTestSteps();
     var availStep = TestStepRegistry.instance.getAvailableTestStep(
       'set_connectivity',
-    );
+    )!;
 
     expect(availStep.form.runtimeType, SetConnectivityForm);
     expect(

@@ -1,15 +1,13 @@
 import 'package:automated_testing_framework/automated_testing_framework.dart';
 import 'package:automated_testing_framework_plugin_connectivity/automated_testing_framework_plugin_connectivity.dart';
-import 'package:flutter/material.dart';
 import 'package:json_class/json_class.dart';
-import 'package:meta/meta.dart';
 
 /// Test step that asserts that the value within [variableName] equals (or does
 /// not equal) a specific [value].
 class AssertConnectivityStep extends TestRunnerStep {
   AssertConnectivityStep({
-    @required this.connected,
-  }) : assert(connected?.isNotEmpty == true);
+    required this.connected,
+  }) : assert(connected.isNotEmpty == true);
 
   /// Set to [true] to expect the application is set as being connected to the
   /// internet and [false] otherwise.
@@ -30,9 +28,11 @@ class AssertConnectivityStep extends TestRunnerStep {
   static AssertConnectivityStep fromDynamic(dynamic map) {
     AssertConnectivityStep result;
 
-    if (map != null) {
+    if (map == null) {
+      throw Exception('[AssertConnectivityStep.fromDynamic]: map is null');
+    } else {
       result = AssertConnectivityStep(
-        connected: map['connected']?.toString()?.toLowerCase(),
+        connected: map['connected']!.toString().toLowerCase(),
       );
     }
 
@@ -42,9 +42,9 @@ class AssertConnectivityStep extends TestRunnerStep {
   /// Executes the step.  This will
   @override
   Future<void> execute({
-    @required CancelToken cancelToken,
-    @required TestReport report,
-    @required TestController tester,
+    required CancelToken cancelToken,
+    required TestReport report,
+    required TestController tester,
   }) async {
     var connected = tester.resolveVariable('{{_connected}}');
     var name = "assert_connectivity('${connected}')";

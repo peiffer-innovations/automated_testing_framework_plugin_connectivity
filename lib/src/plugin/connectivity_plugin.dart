@@ -21,29 +21,29 @@ class ConnectivityPlugin with WidgetsBindingObserver {
 
   static final ConnectivityPlugin _singleton = ConnectivityPlugin._internal();
 
-  StreamController<bool> _connectedStreamController =
+  StreamController<bool>? _connectedStreamController =
       StreamController<bool>.broadcast();
-  Connectivity _connectivity;
-  StreamSubscription _connectivitySubscription;
-  bool _currentConnected;
+  Connectivity? _connectivity;
+  StreamSubscription? _connectivitySubscription;
+  bool _currentConnected = false;
   bool _initialized = false;
-  bool _overriddenConnected;
-  TestController _testController;
+  bool? _overriddenConnected;
+  TestController? _testController;
 
   /// Returns whether or not the device is currently connected.
   bool get connected => _currentConnected;
 
   /// Returns the overridden connection type.  If the connection type has not
   /// been overridden then this will return [null].
-  bool get overriddenConnected => _overriddenConnected;
+  bool? get overriddenConnected => _overriddenConnected;
 
   /// Returns the stream that will fire with a [true] when connectivity is
   /// restored and [false] when connectivity is lost.
-  Stream<bool> get onConnectedChanged => _connectedStreamController.stream;
+  Stream<bool> get onConnectedChanged => _connectedStreamController!.stream;
 
   /// Sets the overridden connected state.  Set to [null] to reset back to using
   /// the value from the device.
-  set overriddenConnected(bool connected) {
+  set overriddenConnected(bool? connected) {
     if (_testController == null && connected != null) {
       throw Exception(
         'The connected flag may not be overridden unless the plugin was initialized with a TestController.',
@@ -80,8 +80,8 @@ class ConnectivityPlugin with WidgetsBindingObserver {
   /// [TestController] is not set then this acts as nothing more than a wrapper
   /// to
   Future<void> initialize({
-    Stream<bool> connectedStream,
-    TestController testController,
+    Stream<bool>? connectedStream,
+    TestController? testController,
   }) async {
     if (_initialized != true) {
       _testController = testController;
@@ -97,7 +97,7 @@ class ConnectivityPlugin with WidgetsBindingObserver {
         // listener can't be registered (ie: we're on an unsupported platform).
         runZonedGuarded(() {
           _connectivitySubscription =
-              _connectivity.onConnectivityChanged.listen(
+              _connectivity?.onConnectivityChanged.listen(
             (ConnectivityResult result) => _updateData(_getConnected(result)),
           );
         }, (_, __) {
@@ -140,7 +140,7 @@ class ConnectivityPlugin with WidgetsBindingObserver {
   /// unsupported and default to [wifi].
   Future<ConnectivityResult> _getConnectivityResult() async {
     var result = await runZonedGuarded<Future<ConnectivityResult>>(
-      () => _connectivity.checkConnectivity(),
+      () => _connectivity!.checkConnectivity(),
       (_, __) {
         // no-op
       },
