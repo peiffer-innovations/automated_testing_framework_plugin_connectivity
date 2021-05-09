@@ -11,9 +11,18 @@ class SetConnectivityStep extends TestRunnerStep {
     required this.connected,
   }) : assert(connected.isNotEmpty == true);
 
+  static const id = 'set_connectivity';
+
+  static List<String> get behaviorDrivenDescriptions => List.unmodifiable([
+        "set the device's connectivity override to `{{connected}}`.",
+      ]);
+
   /// Set to whether or not the device should be forced to report as being
   /// online (`true`) or offline (`false`).
   final String connected;
+
+  @override
+  String get stepId => id;
 
   /// Creates an instance from a JSON-like map structure.  This expects the
   /// following format:
@@ -56,6 +65,22 @@ class SetConnectivityStep extends TestRunnerStep {
     );
 
     ConnectivityPlugin().overriddenConnected = JsonClass.parseBool(connected);
+  }
+
+  @override
+  String getBehaviorDrivenDescription() {
+    var result = behaviorDrivenDescriptions[0];
+
+    if (connected.contains('{{')) {
+      result = result.replaceAll('{{connected}}', connected);
+    } else {
+      result = result.replaceAll(
+        '{{connected}}',
+        JsonClass.parseBool(connected) == true ? 'online' : 'offline',
+      );
+    }
+
+    return result;
   }
 
   /// Overidden to ignore the delay

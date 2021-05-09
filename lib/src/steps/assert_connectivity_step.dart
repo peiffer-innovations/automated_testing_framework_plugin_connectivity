@@ -9,17 +9,25 @@ class AssertConnectivityStep extends TestRunnerStep {
     required this.connected,
   }) : assert(connected.isNotEmpty == true);
 
+  static const id = 'assert_connectivity';
+
+  static List<String> get behaviorDrivenDescriptions => List.unmodifiable([
+        'assert that the device is `{{connected}}`.',
+      ]);
+
   /// Set to [true] to expect the application is set as being connected to the
   /// internet and [false] otherwise.
   final String connected;
+
+  @override
+  String get stepId => id;
 
   /// Creates an instance from a JSON-like map structure.  This expects the
   /// following format:
   ///
   /// ```json
   /// {
-  ///   "connected": <bool>,
-  ///   "connectivity": <String>
+  ///   "connected": <bool>
   /// }
   /// ```
   ///
@@ -60,6 +68,22 @@ class AssertConnectivityStep extends TestRunnerStep {
         'connected: actualValue: [${ConnectivityPlugin().connected}], expected: [$connected].',
       );
     }
+  }
+
+  @override
+  String getBehaviorDrivenDescription() {
+    var result = behaviorDrivenDescriptions[0];
+
+    if (connected.contains('{{')) {
+      result = result.replaceAll('{{connected}}', connected);
+    } else {
+      result = result.replaceAll(
+        '{{connected}}',
+        JsonClass.parseBool(connected) == true ? 'online' : 'offline',
+      );
+    }
+
+    return result;
   }
 
   /// Overidden to ignore the delay

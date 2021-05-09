@@ -6,6 +6,15 @@ import 'package:automated_testing_framework_plugin_connectivity/automated_testin
 /// [ConnectivityPlugin].  Applications would need to use that plugin to allow
 /// for connectivity testing.
 class ResetConnectivityStep extends TestRunnerStep {
+  static List<String> get behaviorDrivenDescriptions => List.unmodifiable([
+        'reset the connectivity overrrides.',
+      ]);
+
+  static const id = 'reset_connectivity';
+
+  @override
+  String get stepId => id;
+
   /// Creates an instance from a JSON-like map structure.  This expects the
   /// following format:
   ///
@@ -41,6 +50,13 @@ class ResetConnectivityStep extends TestRunnerStep {
     );
 
     ConnectivityPlugin().overriddenConnected == null;
+  }
+
+  @override
+  String getBehaviorDrivenDescription() {
+    var result = behaviorDrivenDescriptions[0];
+
+    return result;
   }
 
   /// Overidden to ignore the delay

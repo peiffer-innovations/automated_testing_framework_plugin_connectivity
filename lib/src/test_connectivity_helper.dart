@@ -11,7 +11,7 @@ class TestConnectivityHelper {
           form: AssertConnectivityForm(),
           help: TestConnectivityTranslations
               .atf_connectivity_help_assert_connectivity,
-          id: 'assert_connectivity',
+          id: AssertConnectivityStep.id,
           keys: const {'connected'},
           quickAddValues: {'connected': 'false'},
           title: TestConnectivityTranslations
@@ -26,7 +26,7 @@ class TestConnectivityHelper {
           form: ResetConnectivityForm(),
           help: TestConnectivityTranslations
               .atf_connectivity_help_reset_connectivity,
-          id: 'reset_connectivity',
+          id: ResetConnectivityStep.id,
           keys: const {},
           quickAddValues: const {},
           title: TestConnectivityTranslations
@@ -41,7 +41,7 @@ class TestConnectivityHelper {
           form: SetConnectivityForm(),
           help: TestConnectivityTranslations
               .atf_connectivity_help_set_connectivity,
-          id: 'set_connectivity',
+          id: SetConnectivityStep.id,
           keys: const {'connected'},
           quickAddValues: null,
           title: TestConnectivityTranslations
