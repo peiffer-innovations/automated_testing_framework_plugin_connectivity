@@ -2,7 +2,8 @@
 	"active": true,
 	"name": "Connectivity",
 	"suiteName": "Connectivity",
-	"steps": [{
+	"steps": [
+		{
 			"id": "tap",
 			"values": {
 				"testableId": "test_page_Edit Text"
@@ -71,6 +72,10 @@
 			"values": {
 				"goldenCompatible": true
 			}
+		},
+		{
+			"id": "reset_connectivity",
+			"values": {}
 		}
 	],
 	"version": 1

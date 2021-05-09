@@ -4,15 +4,15 @@ const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "version.json": "4b6db237b3514a88107a422469adfb0f",
-"index.html": "9c2b215019806f22e5e6f6080897d86a",
-"/": "9c2b215019806f22e5e6f6080897d86a",
-"main.dart.js": "513957c332cd89ad68f7209a6a0eff7a",
+"index.html": "80c177b990272fe0b81902c780e68b59",
+"/": "80c177b990272fe0b81902c780e68b59",
+"main.dart.js": "cbd2dcce0307911d53657771b624776c",
 "favicon.png": "b72ecb27b88d0f05d623684a8ea894e8",
 "icons/Icon-192.png": "478b7a2438d6842fb2d59eaafecc230b",
 "icons/Icon-512.png": "97bf386e3ad9dfe2e1fdb14fa0e39009",
 "manifest.json": "15f73b7e8a8209c2206210b3ac8dea1b",
 "assets/AssetManifest.json": "c63df6e7fb1b90a3b57b1f4b0cf5200e",
-"assets/NOTICES": "3c78fc2f86cffac82f26f14b3a3bb52a",
+"assets/NOTICES": "3e9e4acce1efd03c7d54a7126b19df9b",
 "assets/FontManifest.json": "7b2a36307916a9721811788013e65289",
 "assets/packages/automated_testing_framework_example/assets/tests/dropdowns.json": "f1f2f78f6bbb729048728e05abca6d41",
 "assets/packages/automated_testing_framework_example/assets/tests/exit_app.json": "358f6cab447478d73eea4127678106ac",
@@ -24,11 +24,11 @@ const RESOURCES = {
 "assets/packages/automated_testing_framework_example/assets/tests/variables.json": "7d554f244b740f375961fb0c9f80b393",
 "assets/packages/automated_testing_framework_example/assets/tests/failure.json": "8cefd140b688b564169ed2d304a52ce8",
 "assets/packages/automated_testing_framework_example/assets/tests/interpolated_variables.json": "2491e0da34265345c86a6fe89a089894",
-"assets/packages/automated_testing_framework_example/assets/tests/buttons.json": "d35cccfbd9c0c4547e34441f6038ac5c",
+"assets/packages/automated_testing_framework_example/assets/tests/buttons.json": "0980eeed758c9091b9fe476bbe3aae34",
 "assets/packages/automated_testing_framework_example/assets/tests/stacked_scrolling.json": "a98582489811cc6fc6a56cfcd5835699",
 "assets/packages/automated_testing_framework_example/assets/all_tests.json": "2d2c55430cb923f834f1683ae76deaf4",
 "assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac",
-"assets/assets/tests/connectivity.json": "dae933a493353c53181121228fa0d66d",
+"assets/assets/tests/connectivity.json": "91ea934e32ff0066f763b65484507d2d",
 "assets/assets/all_tests.json": "007825d26b802643980adb4d8209174f"
 };
 
@@ -173,7 +173,7 @@ async function downloadOffline() {
     }
     currentContent[key] = true;
   }
-  for (var resourceKey in Object.keys(RESOURCES)) {
+  for (var resourceKey of Object.keys(RESOURCES)) {
     if (!currentContent[resourceKey]) {
       resources.push(resourceKey);
     }
