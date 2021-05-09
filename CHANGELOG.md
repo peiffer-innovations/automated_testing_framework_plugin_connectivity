@@ -1,4 +1,4 @@
-## [3.0.1] - May 9th, 2021
+## [3.0.1+1] - May 9th, 2021
 
 * Added the BDD format to the steps.
 

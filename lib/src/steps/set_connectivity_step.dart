@@ -68,7 +68,7 @@ class SetConnectivityStep extends TestRunnerStep {
   }
 
   @override
-  String getBehaviorDrivenDescription() {
+  String getBehaviorDrivenDescription(TestController tester) {
     var result = behaviorDrivenDescriptions[0];
 
     if (connected.contains('{{')) {
