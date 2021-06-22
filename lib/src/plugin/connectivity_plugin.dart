@@ -34,14 +34,14 @@ class ConnectivityPlugin with WidgetsBindingObserver {
   bool get connected => _currentConnected;
 
   /// Returns the overridden connection type.  If the connection type has not
-  /// been overridden then this will return [null].
+  /// been overridden then this will return `null`.
   bool? get overriddenConnected => _overriddenConnected;
 
   /// Returns the stream that will fire with a [true] when connectivity is
   /// restored and [false] when connectivity is lost.
   Stream<bool> get onConnectedChanged => _connectedStreamController!.stream;
 
-  /// Sets the overridden connected state.  Set to [null] to reset back to using
+  /// Sets the overridden connected state.  Set to `null` to reset back to using
   /// the value from the device.
   set overriddenConnected(bool? connected) {
     if (_testController == null && connected != null) {
@@ -157,7 +157,7 @@ class ConnectivityPlugin with WidgetsBindingObserver {
     if (realConnected != _currentConnected) {
       _currentConnected = realConnected;
       _connectedStreamController?.add(_currentConnected);
-      _testController?.setVariable(
+      _testController?.setTestVariable(
         value: _currentConnected,
         variableName: '_connected',
       );
