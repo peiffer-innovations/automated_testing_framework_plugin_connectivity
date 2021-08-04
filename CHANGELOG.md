@@ -1,3 +1,7 @@
+## [3.0.2]
+
+- Migrated from the deprecated connectivity plugin to connectivity_plus.
+
 ## [3.0.1+2] - June 22nd, 2021
 
 * Updated with the latest framework and removed deprecated references.
