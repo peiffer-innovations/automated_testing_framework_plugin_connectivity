@@ -1,4 +1,4 @@
-# automated_testing_framework_plugin_flow_control
+# automated_testing_framework_plugin_connectivity
 
 ## Table of Contents
 

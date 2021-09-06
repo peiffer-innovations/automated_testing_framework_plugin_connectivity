@@ -1,3 +1,8 @@
+## [3.0.1+3] - September 6th, 2021
+
+* Readme and example updates
+
+
 ## [3.0.1+2] - June 22nd, 2021
 
 * Updated with the latest framework and removed deprecated references.
