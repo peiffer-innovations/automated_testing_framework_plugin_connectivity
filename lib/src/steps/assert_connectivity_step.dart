@@ -54,7 +54,7 @@ class AssertConnectivityStep extends TestRunnerStep {
     required TestReport report,
     required TestController tester,
   }) async {
-    var connected = tester.resolveVariable('{{_connected}}');
+    var connected = tester.resolveVariable(this.connected);
     var name = "assert_connectivity('${connected}')";
     log(
       name,

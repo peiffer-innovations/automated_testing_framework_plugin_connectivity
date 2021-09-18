@@ -1,3 +1,8 @@
+## [3.0.2] - September 18th, 2021
+
+* Assert connectivity fix
+
+
 ## [3.0.1+3] - September 6th, 2021
 
 * Readme and example updates
