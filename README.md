@@ -6,7 +6,7 @@
 * [Live Example](#live-example)
 * [Quick Start](#quick-start)
 * [Reserved Variables](#reserved_variables)
-* [Additional Test Steps](https://github.com/peiffer-innovations/automated_testing_framework_plugin_flow_control/blob/main/documentation/STEPS.md)
+* [Additional Test Steps](https://github.com/peiffer-innovations/automated_testing_framework_plugin_connectivity/blob/main/documentation/STEPS.md)
 
 
 ## Introduction

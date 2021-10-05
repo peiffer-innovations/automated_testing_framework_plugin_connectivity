@@ -1,3 +1,8 @@
+## [3.0.2+2] - October 4th, 2021
+
+* README update
+
+
 ## [3.0.2+1] - September 19th, 2021
 
 * Dependency updates
