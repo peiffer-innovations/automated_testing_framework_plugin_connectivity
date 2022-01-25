@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:automated_testing_framework/automated_testing_framework.dart';
-import 'package:connectivity/connectivity.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 
 /// Plugin that allows for the simulation of being connected or disconnected

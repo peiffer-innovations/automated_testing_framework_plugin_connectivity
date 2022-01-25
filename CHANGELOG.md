@@ -1,3 +1,8 @@
+## [3.0.4] - January 25th, 2022
+
+* Swapping `connectivity` with `connectivity_plus`
+
+
 ## [3.0.3] - January 9th, 2022
 
 * Dependency updates

@@ -2,14 +2,14 @@ name: automated_testing_framework_plugin_connectivity
 description: Library to use provide connectivity related test steps to the Automated Testing Framework.
 homepage: https://github.com/peiffer-innovations/automated_testing_framework_plugin_connectivity
 
-version: 3.0.3
+version: 3.0.4
 
 environment:
   sdk: ">=2.15.0 <3.0.0"
 
 dependencies:
-  automated_testing_framework: ^3.2.0
-  connectivity: ^3.0.6
+  automated_testing_framework: ^3.2.2
+  connectivity_plus: ^2.2.0
   convert: ^3.0.1
   flutter:
     sdk: flutter
