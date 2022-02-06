@@ -8,15 +8,15 @@ environment:
   sdk: ">=2.15.0 <3.0.0"
 
 dependencies:
-  automated_testing_framework: ^3.2.2
+  automated_testing_framework: ^3.2.3
   connectivity_plus: ^2.2.0
   convert: ^3.0.1
   flutter:
     sdk: flutter
-  form_validation: ^2.1.0+1
-  json_class: ^2.1.2+3
+  form_validation: ^2.1.0+2
+  json_class: ^2.1.2+4
   logging: ^1.0.2
-  static_translations: ^2.1.0+1
+  static_translations: ^2.1.0+2
 
 # dependency_overrides:
 #   automated_testing_framework:
