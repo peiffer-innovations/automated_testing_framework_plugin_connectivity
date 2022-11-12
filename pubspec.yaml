@@ -3,29 +3,28 @@ description: 'Library to use provide connectivity related test steps to the Auto
 homepage: 'https://github.com/peiffer-innovations/automated_testing_framework_plugin_connectivity'
 version: '4.0.0+22'
 
-environment: 
-  sdk: '>=2.17.0 <3.0.0'
+environment:
+  sdk: '>=2.18.0 <3.0.0'
 
-dependencies: 
+dependencies:
   automated_testing_framework: '^4.0.7+5'
   connectivity_plus: '^3.0.2'
   convert: '^3.1.1'
-  flutter: 
+  flutter:
     sdk: 'flutter'
   form_validation: '^2.1.0+22'
   json_class: '^2.1.2+13'
   logging: '^1.1.0'
   static_translations: '^2.1.1+16'
 
-dev_dependencies: 
-  flutter_test: 
+dev_dependencies:
+  flutter_test:
     sdk: 'flutter'
 
-
-flutter: 
+flutter:
   uses-material-design: true
 
-ignore_updates: 
+ignore_updates:
   - 'archive'
   - 'async'
   - 'boolean_selector'
