@@ -7,7 +7,7 @@ void main() {
 
   test('assert_connectivity', () {
     TestConnectivityHelper.registerTestSteps();
-    var availStep = TestStepRegistry.instance.getAvailableTestStep(
+    final availStep = TestStepRegistry.instance.getAvailableTestStep(
       'assert_connectivity',
     )!;
 
@@ -27,7 +27,7 @@ void main() {
 
   test('reset_connectivity', () {
     TestConnectivityHelper.registerTestSteps();
-    var availStep = TestStepRegistry.instance.getAvailableTestStep(
+    final availStep = TestStepRegistry.instance.getAvailableTestStep(
       'reset_connectivity',
     )!;
 
@@ -47,7 +47,7 @@ void main() {
 
   test('set_connectivity', () {
     TestConnectivityHelper.registerTestSteps();
-    var availStep = TestStepRegistry.instance.getAvailableTestStep(
+    final availStep = TestStepRegistry.instance.getAvailableTestStep(
       'set_connectivity',
     )!;
 

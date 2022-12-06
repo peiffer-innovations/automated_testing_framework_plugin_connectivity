@@ -53,11 +53,11 @@ class SetConnectivityStep extends TestRunnerStep {
     required TestReport report,
     required TestController tester,
   }) async {
-    var connected =
+    final connected =
         tester.resolveVariable(this.connected)?.toString().toLowerCase();
 
     assert(['false', 'true'].contains(connected));
-    var name = "set_connectivity('$connected')";
+    final name = "set_connectivity('$connected')";
 
     log(
       name,

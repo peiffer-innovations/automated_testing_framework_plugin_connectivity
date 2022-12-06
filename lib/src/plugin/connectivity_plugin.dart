@@ -152,7 +152,7 @@ class ConnectivityPlugin with WidgetsBindingObserver {
   }
 
   bool _updateData(bool connected) {
-    var realConnected = _overriddenConnected ?? connected;
+    final realConnected = _overriddenConnected ?? connected;
 
     if (realConnected != _currentConnected) {
       _currentConnected = realConnected;

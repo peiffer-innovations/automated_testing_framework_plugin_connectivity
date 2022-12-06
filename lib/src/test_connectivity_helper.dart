@@ -7,12 +7,12 @@ class TestConnectivityHelper {
   static void registerTestSteps([TestStepRegistry? registry]) {
     (registry ?? TestStepRegistry.instance).registerCustomSteps([
       TestStepBuilder(
-        availableTestStep: AvailableTestStep(
+        availableTestStep: const AvailableTestStep(
           form: AssertConnectivityForm(),
           help: TestConnectivityTranslations
               .atf_connectivity_help_assert_connectivity,
           id: AssertConnectivityStep.id,
-          keys: const {'connected'},
+          keys: {'connected'},
           quickAddValues: {'connected': 'false'},
           title: TestConnectivityTranslations
               .atf_connectivity_title_assert_connectivity,
@@ -22,13 +22,13 @@ class TestConnectivityHelper {
         testRunnerStepBuilder: AssertConnectivityStep.fromDynamic,
       ),
       TestStepBuilder(
-        availableTestStep: AvailableTestStep(
+        availableTestStep: const AvailableTestStep(
           form: ResetConnectivityForm(),
           help: TestConnectivityTranslations
               .atf_connectivity_help_reset_connectivity,
           id: ResetConnectivityStep.id,
-          keys: const {},
-          quickAddValues: const {},
+          keys: {},
+          quickAddValues: {},
           title: TestConnectivityTranslations
               .atf_connectivity_title_reset_connectivity,
           widgetless: true,
@@ -37,12 +37,12 @@ class TestConnectivityHelper {
         testRunnerStepBuilder: ResetConnectivityStep.fromDynamic,
       ),
       TestStepBuilder(
-        availableTestStep: AvailableTestStep(
+        availableTestStep: const AvailableTestStep(
           form: SetConnectivityForm(),
           help: TestConnectivityTranslations
               .atf_connectivity_help_set_connectivity,
           id: SetConnectivityStep.id,
-          keys: const {'connected'},
+          keys: {'connected'},
           quickAddValues: null,
           title: TestConnectivityTranslations
               .atf_connectivity_title_set_connectivity,
